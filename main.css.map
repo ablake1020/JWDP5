@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,aAAa,CAAC;EACV,KAAK,EAAE,kBAAkB;CAC5B",
+    "sources": [
+        "main.scss",
+        "scss/_variable_overrides.scss",
+        "../node_modules/bootstrap/scss/bootstrap.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
