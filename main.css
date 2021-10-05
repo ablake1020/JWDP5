@@ -1,1 +1,9 @@
 /* No CSS *//*# sourceMappingURL=main.css.map */
+
+h1, h2, h5 {
+    font-family: Architects Daughter !important;
+}
+
+p, span, button, a {
+    font-family: Ubuntu !important;
+}
