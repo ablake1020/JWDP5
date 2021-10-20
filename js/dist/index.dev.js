@@ -1,4 +1,5 @@
 "use strict";
 
-var api = 'http://localhost:3000/api/cameras';
-var singleProduct = './product.html?id=';
+const url = 'http://localhost:3000/api/cameras';
+const productsContainer = document.getElementById('products');
+const singleProduct = './product.html?id=';

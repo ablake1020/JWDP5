@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap">
     <link rel="icon" href="images/orinoco-logo-favicon.png" type="image/icon">
+    <script src="/js/bootstrap.bundle.min.js"></script>
     <title>Orinoco - Capture the World Through Your Lens</title>
   </head>
 
@@ -49,58 +50,12 @@
         <div class="container">
           <h2 class="col text-warning mb-3 mb-md-4 text-center"><span><i class="fas fa-camera-retro text-dark"></i></span> Popular Pics <span><i class="fas fa-camera-retro text-dark"></i></span></h2>
         </div>
-        <div class="col-12 col-lg-6 bg-warning rounded-left">
-          <div class="card my-3 border-light shadow">
-            <img class="card-img-top" src="images/vcam_1.jpg" alt="Popular camera"/>
-            <div class="card-body">
-              <h5 class="card-title text-dark">Canon 670XP</h5>
-              <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="product.html"><button type="button" class="btn btn-dark stretched-link">More Details <i class="fas fa-arrow-right"></i></button></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6 bg-warning rounded-right">
-          <div class="card my-3 border-light shadow">
-            <img class="card-img-top" src="images/vcam_2.jpg" alt="Popular camera">
-            <div class="card-body">
-              <h5 class="card-title text-dark">Canon 970XP</h5>
-              <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="product.html"><button type="button" class="btn btn-dark stretched-link">More Details <i class="fas fa-arrow-right"></i></button></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-4 mb-lg-4">
-          <div class="card my-4 mb-lg-0 border-light shadow">
-            <img class="card-img-top" src="images/vcam_3.jpg" alt="Old fashioned Camera">
-            <div class="card-body">
-              <h5 class="card-title text-dark">Canon 1170XP</h5>
-              <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="product.html"><button type="button" class="btn btn-dark stretched-link">More Details <i class="fas fa-arrow-right"></i></button></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-4">
-          <div class="card my-4 mb-lg-0 border-light shadow">
-            <img class="card-img-top" src="images/vcam_4.jpg" alt="Vintage camera">
-            <div class="card-body">
-              <h5 class="card-title text-dark">Canon 1370XP</h5>
-              <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="product.html"><button type="button" class="btn btn-dark stretched-link">More Details <i class="fas fa-arrow-right"></i></button></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-4">
-          <div class="card my-4 mb-lg-0 border-light shadow">
-            <img class="card-img-top" src="images/vcam_5.jpg" alt="Classic camera">
-            <div class="card-body">
-              <h5 class="card-title text-dark">Canon 1570XP</h5>
-              <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-              <a href="product.html"><button type="button" class="btn btn-dark stretched-link">More Details <i class="fas fa-arrow-right"></i></button></a>
-            </div>
-          </div>
-        </div>
+        <div class="bg-warning mb-5" id="products"></div>
       </div>
     </main>
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+
   </body>
 
   <footer class="bg-light container-fluid">
@@ -127,15 +82,13 @@
       </div>
     </div>
   </footer>
-
-  <script src="js/index.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 </html>
