@@ -13,20 +13,20 @@ function acquireSkus() {
         let cameraPrice = data[i].price.toString();
         let cameraImage = data[i].imageUrl;
 
-        let product = document.createElement('div');
+        let products = document.createElement('div');
 
-        product.innerHTML = `
-            <a href="product.html?id=${cameraId}">
+        products.innerHTML = `
+            <a href="singleProduct.html?id=${cameraId}">
                 <div class=" col-12 shadow">
                     <img src="${cameraImage}" class="card-img-top" alt="Product Image">
                     <div class="content">
-                        <h3>${cameraName}</h3>
+                        <h3 class="text-warning">${cameraName}</h3>
                         <p class="desc">${cameraDescription}</p>
                         <span class="price">$ ${cameraPrice}</span>
                     </div>
                 </div>
             </a>`;
 
-        skuContainer.appendChild(product);
+        skuContainer.appendChild(products);
     }
 };
