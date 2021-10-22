@@ -27,12 +27,12 @@ createCard = (response) => {
         //const newA = document.createElement('a');
 
         //add bootstrap classes and attributes
-        card.classList.add('col', 'col-lg-4', 'card-body');
+        card.classList.add('col', 'col-lg-4', 'col-sm-6', 'card-body');
         productCard.classList.add('card', 'col-lg-12', 'shadow', 'p-0');
 
         //item image, description, and link through clickable button
         productCard.innerHTML += '<img src="' + response[i].imageUrl + '" alt="" class="card-img-top img-fluid" style="min-height:200px;width:auto;overflow:hidden;">';
-        productCard.innerHTML += '<div class="card-body"> <h2 class="card-title">' + response[i].name + '</h2> <p class="card-text text-secondary">' + response[i].description + '</p> <p class="card-text">' + '$' + response[i].price / 100 + '</p> </div>';
+        productCard.innerHTML += '<div class="card-body"> <h2 class="card-title">' + response[i].name + '</h2> <p class="card-text text-secondary">' + response[i].description + '</p> <p class="card-text text-warning">' + '€ ' + response[i].price / 100 + '</p> </div>';
         productCard.innerHTML += '<a href="single-product.html?id=' + response[i]._id + '" class="btn btn-dark m-3 w-50 stretched-link"> More Details <i class="fas fa-arrow-right"></i></a>';
 
         //add completed elements to the card
