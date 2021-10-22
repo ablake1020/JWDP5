@@ -19,18 +19,18 @@ createSkuCards = (response) => {
     const skuCards = document.getElementById('products-list');
     for (let i in response) {
         //create elements for cards
-        const card = document.createElement('article');
-        const productCard = document.createElement('div');
+        const cardItself = document.createElement('article');
+        const cameraInfo = document.createElement('div');
 
-        card.classList.add('col', 'col-lg-4', 'col-sm-6', 'card-body');
-        productCard.classList.add('card', 'col-lg-12', 'shadow', 'p-0');
+        cardItself.classList.add('col', 'col-lg-4', 'col-sm-6', 'card-body');
+        cameraInfo.classList.add('card', 'col-lg-12', 'shadow', 'p-0');
 
-        productCard.innerHTML += '<img src="' + response[i].imageUrl + '" alt="" class="card-img-top img-fluid" style="min-height:200px;width:auto;overflow:hidden;">';
-        productCard.innerHTML += '<div class="card-body"> <h2 class="card-title">' + response[i].name + '</h2> <p class="card-text text-secondary">' + response[i].description + '</p> <p class="card-text text-warning">' + '€ ' + response[i].price / 100 + '</p> </div>';
-        productCard.innerHTML += '<a href="single-product.html?id=' + response[i]._id + '" class="btn btn-dark m-3 w-50 stretched-link"> More Details <i class="fas fa-arrow-right"></i></a>';
+        cameraInfo.innerHTML += '<img src="' + response[i].imageUrl + '" alt="" class="card-img-top img-fluid">';
+        cameraInfo.innerHTML += '<div class="card-body"> <h2 class="card-title">' + response[i].name + '</h2> <p class="card-text text-secondary">' + response[i].description + '</p> <p class="card-text text-warning">' + '€ ' + response[i].price / 100 + '</p> </div>';
+        cameraInfo.innerHTML += '<a href="single-product.html?id=' + response[i]._id + '" class="btn btn-outline-dark m-3 w-50 stretched-link"> More Details <i class="fas fa-arrow-right"></i></a>';
 
-        card.appendChild(productCard);
-        skuCards.appendChild(card);
+        cardItself.appendChild(cameraInfo);
+        skuCards.appendChild(cardItself);
     }
 }
 
@@ -40,7 +40,7 @@ init = async() => {
         const response = await requestPromise;
         createSkuCards(response);
         } catch (error) {
-        document.querySelector('main').innerHTML = '<h2 class = "mx-auto">' + error + '</h2>';
+        document.querySelector('main').innerHTML = `<h3 class = "mx-auto">${error}</h3>`;
     }
 }
 
