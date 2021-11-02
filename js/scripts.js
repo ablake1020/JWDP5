@@ -18,7 +18,7 @@ makeRequest = () => {
 createSkuCards = (response) => {
     const skuCards = document.getElementById('products-list');
     for (let i in response) {
-        //create elements for cards
+        //creates elements for sku cards
         const cardItself = document.createElement('article');
         const cameraInfo = document.createElement('div');
 
@@ -39,8 +39,8 @@ init = async() => {
         const requestPromise = makeRequest();
         const response = await requestPromise;
         createSkuCards(response);
-        } catch (error) {
-        document.querySelector('main').innerHTML = `<h3 class = "mx-auto">${error}</h3>`;
+    } catch (error) {
+        document.querySelector('main').innerHTML = '<h2 class = "my-5 mx-5">' + error + '</h2>';
     }
 }
 

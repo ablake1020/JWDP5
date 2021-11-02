@@ -5,17 +5,14 @@ makeRequest = () => {
         const id = urlParameter.get('id');
 
         let apiRequest = new XMLHttpRequest();
-        //id is used to build the unique url for the single product page
         apiRequest.open('GET', 'http://localhost:3000/api/cameras/' + id);
         apiRequest.send();
         apiRequest.onreadystatechange = () => {
             if (apiRequest.readyState === 4) {
                 if (apiRequest.status === 200) {
-                    //if ready state and status return success codes, resolve promise with response
                     resolve(JSON.parse(apiRequest.response));
                 } else {
-                    //if unsuccessful, reject with error message
-                    reject('API Request Failed!');
+                    reject('Oh no, the server is down!');
                 }
             }
         }
@@ -23,23 +20,40 @@ makeRequest = () => {
 }
 
 createSingleSku = (response) => {
-    const skuId = document.querySelector('section');
 
+    const cameraName = response.name;
+    const cameraDescription = response.description;
+    const cameraImg = response.imageUrl;
+    const cameraPrice = response.price;
+    
+    const skuId = document.getElementById('skuId');
     const cameraTitle = document.createElement('h1');
-    const cameraDescription = document.createElement('p');
-    const skuContent = document.getElementById('skuContent');
+    const genericDescription = document.createElement('p');
+    const skuContent = document.createElement('article');
         
-    cameraTitle.innerHTML += '<h1 class="display-4 mt-md-3 text-warning">' + response[i].name + '</h1>';
-    cameraDescription.innerHTML += '<p class="lead mb-5">This camera is perfect for weekend trips to the mountains or days off exploring your own city. How you use it is up to you, but we know it\'ll produce the best pics and memoroies.</p>';
+    cameraTitle.innerHTML += '<h1 style="font-size:3rem; width:95%;" class="display-4 mt-4 mt-md-3 text-warning">' + cameraName + '</h1>';
+    genericDescription.innerHTML += '<p class="lead mb-5">This camera is perfect for weekend trips to the mountains or days off exploring your own city. How you use it is up to you, but we know it\'ll produce the best pics and memoroies.</p>';
     skuContent.innerHTML += '<div class="row my-3">';
-    skuContent.innerHTML += '<img class="border-light shadow" id="skuImg" src="' + response[i].imageUrl + '" width="95%" height="100%" alt="Popular camera"/>';
-    skuContent.innerHTML += '<p class="my-3">' + response[i].description + '</p>';
-    skuContent.innerHTML += '<p class="font-weight-bold text-warning">' + '€' + response[i].price / 100 + '</p>';
-    skuContent.innerHTML += '<hr>';
+    skuContent.innerHTML += '<img class="border-light shadow mx-5" id="skuImg" src="' + cameraImg + '" width="60%" height="25%" alt="Popular camera"/>';
+    skuContent.innerHTML += '<p style="font-size:1rem; width:60%;" class="my-3 mx-5">' + cameraDescription + '</p>';
+    skuContent.innerHTML += '<p style="font-size:1.35rem;" class="font-weight-bold text-warning mx-5 mb-4">' + '€' + cameraPrice / 100 + '</p>';
     skuContent.innerHTML += '<div class="my-1 mx-5">';
-    skuContent.innerHTML += '<a href="cart.html"><button type="button" class="btn btn-dark col-2-md">Add to Cart <i class="fas fa-arrow-right"></i></button></a></div></div>';
+    skuContent.innerHTML += '<a href="cart.html"><button type="button" class="btn btn-dark col-2-md mb-5 mx-5">Add to Cart <i class="fas fa-arrow-right"></i></button></a></div></div>';
 
+    skuId.appendChild(cameraTitle);
+    skuId.appendChild(genericDescription);
     skuId.appendChild(skuContent);
+        
+}
+
+init = async() => {
+    try {
+        const requestPromise = makeRequest();
+        const response = await requestPromise;
+        createSingleSku(response);
+    } catch (error) {
+        document.querySelector('main').innerHTML = '<h2 class = "my-5 mx-5">' + error + '</h2>';
+    }
 }
 
 init();
