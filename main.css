@@ -6,4 +6,9 @@ p, span, button, a {
   font-family: Ubuntu !important;
   font-weight: 200 !important;
 }
+
+.order-info {
+  font-size: 2em !important;
+}
+
 /*# sourceMappingURL=main.css.map */

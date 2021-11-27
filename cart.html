@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="icon" href="images/orinoco-logo-favicon.png" type="image/icon">
   </head>
 
   <header class="bg-light">
@@ -37,12 +38,98 @@
   </header>
 
   <body>
-    <div class="jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4 mt-md-3">Your Items</h1>
-        <p class="lead mb-4">You're almost finished! Proceed to checkout or continue <a class="text-warning" href="index.html">shopping</a>. We cherish all of our customers and hope to fill your next order soon.</p>
+    <main>
+      <div class="jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4 mt-md-3">Your Items</h1>
+          <p class="lead mb-4">You're almost finished! Proceed to checkout or continue <a class="text-warning" href="index.html">shopping</a>.</p>
+        </div>
       </div>
-    </div>
+        <!--DOM Manipulation cart content-->
+      <table class="table container" id="purchase-info">
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Lens</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+          <th scope="col"></th>
+        </tr>
+        <tbody>
+          <tr>
+            <td>Katatone</td>
+            <td>50mm 1.5</td>
+            <td>1</td>
+            <td style="color:#68a047;">€599</td>
+            <td style="color:#f1959b;">X</td>
+          </tr>
+          <tr>
+            <td>Kuros TTS</td>
+            <td>50mm 1.5</td>
+            <td>2</td>
+            <td style="color:#68a047;">€3198</td>
+            <td style="color:#f1959b;">X</td>
+          </tr>
+          <tr>
+            <td>Franck JS 105</td>
+            <td>50mm 1.5</td>
+            <td>2</td>
+            <td style="color:#68a047;">€4198</td>
+            <td style="color:#f1959b;">X</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="container">
+        <hr class="bg-warning"> 
+      </div>
+      <div class="container-fluid mb-4" id="cart-data">
+        <h2 class="order-info my-3 pt-4 mx-5">Order Information</h2>
+        <form class="needs-validation" novalidate>
+          <div class="row mb-2 mx-4">
+            <div class="col-sm-4">
+              <label for="firstName" class="form-label">First name <i class="fas fa-signature"></i></label>
+              <input type="text" class="form-control shadow-sm" id="firstName" placeholder="" pattern="[A-Za-z]{1,32}" required>
+              <div class="invalid-feedback">A valid first name is required.</div>
+            </div>
+            <div class="col-sm-4">
+              <label for="lastName" class="form-label">Last name <i class="fas fa-signature"></i></label>
+              <input type="text" class="form-control shadow-sm" id="lastName" placeholder="" pattern="[A-Za-z]{1,32}" required>
+              <div class="invalid-feedback">A valid last name is required.</div>
+            </div>
+            <div class="col-sm-4">
+              <label for="email" class="form-label">Email address <i class="far fa-envelope"></i></label>
+              <input type="email" class="form-control shadow-sm" id="emailAddress" placeholder="youremail@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+              <div class="invalid-feedback">A valid email address is required.</div>
+            </div>
+          </div>
+          <div class="row mb-4 mx-4">
+            <div class="col-sm-5">
+              <label for="address" class="form-label">Address <i class="fas fa-home"></i></label>
+              <input type="address" class="form-control shadow-sm" id="shippingAddress" placeholder="" pattern="[A-Za-z]{1,32}" required>
+              <div class="invalid-feedback">A valid shipping address is required.</div>
+            </div>
+            <div class="col-sm-3">
+              <label for="city" class="form-label">City <i class="fas fa-city"></i></label>
+              <input type="city" class="form-control shadow-sm" id="city" placeholder="" pattern="[A-Za-z]{1,32}" required>
+              <div class="invalid-feedback">A valid city or town is required.</div>
+            </div>
+            <div class="col-sm-1">
+              <label for="postalCode" class="form-label">ZIP <i class="fas fa-map-marker-alt"></i></label>
+              <input type="postalCode" class="form-control shadow-sm" id="postalCode" placeholder="" pattern="[A-Za-z]{1,32}" required>
+              <div class="invalid-feedback">A valid postal code or ZIP is required.</div>
+            </div>
+            <div class="col-sm-3">
+              <label for="country" class="form-label">Country <i class="fas fa-globe-americas"></i></label>
+              <input type="country" class="form-control shadow-sm" id="country" placeholder="Austria, United States, etc..." pattern="[A-Za-z]{1,32}" required>
+              <div class="invalid-feedback">A valid country is required.</div>
+            </div>
+            <div class="col">
+              <a href=""><button class="btn btn-dark mt-3 mb-3">Submit Order <i class="fas fa-hand-holding-usd"></i></button></a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="/js/cart.js"></script>
   </body>
 
   <footer class="bg-light">
